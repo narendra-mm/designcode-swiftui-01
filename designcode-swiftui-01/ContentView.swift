@@ -10,11 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
+            //In SwiftUI the order of elements are last one shows in the front
             //background
             BackCardView()
                 .offset(x: 0, y: -40)
+                .scaleEffect(0.9)
+                .rotationEffect(Angle.degrees(10))
+                .rotation3DEffect(Angle(degrees: 10), axis: (x: 1, y: 0, z: 0))
+            
             BackCardView()
                 .offset(x: 0, y: -20)
+                .scaleEffect(0.95)
+                .rotationEffect(Angle.degrees(5))
+                .rotation3DEffect(Angle(degrees: 5), axis: (x: 1, y: 0, z: 0))
             
             //card
             CardView()
@@ -63,7 +71,7 @@ struct BackCardView: View {
         VStack {
             Spacer()
         }
-        .frame(width: 300, height: 220)
+        .frame(width: 340, height: 220)
         .background(Color.blue )
         .cornerRadius(20)
         .shadow(radius: 20)
